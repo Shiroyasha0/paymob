@@ -1,6 +1,6 @@
 
 let func = async () => {
-    let response = await fetch('https://accept.paymob.com/api/auth/tokens', {
+    let {token} = await fetch('https://accept.paymob.com/api/auth/tokens', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -12,7 +12,8 @@ let func = async () => {
 
         })
     }).then(resp => resp.json());
-    let token = response.token;
+
+    // let token = response.token;
     console.log(token)
     document.getElementById("token").innerHTML = token;
 }
