@@ -1,4 +1,6 @@
 
+var x;
+
 fetch('https://accept.paymob.com/api/auth/tokens', {
     method: 'POST',
     headers: {
@@ -13,7 +15,9 @@ fetch('https://accept.paymob.com/api/auth/tokens', {
 })
 .then(response => response.json())
 .then(response => JSON.stringify(response.token))
-.then(token => document.getElementById("token").innerHTML=token)
-
-
-alert(document.getElementById("token").value ) 
+.then(token => {
+    document.getElementById("token").innerHTML=token;
+    x = token;
+}).then(()=>{
+    alert(`token: ${x}`);
+})
