@@ -1,7 +1,7 @@
 
 var x;
 
-fetch('https://accept.paymob.com/api/auth/tokens', {
+let y = fetch('https://accept.paymob.com/api/auth/tokens', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -17,7 +17,7 @@ fetch('https://accept.paymob.com/api/auth/tokens', {
 .then(response => JSON.stringify(response.token))
 .then(token => {
     document.getElementById("token").innerHTML=token;
-    x = token;
-}).then(()=>{
-    alert(`token: ${x}`);
+    return token;
 })
+
+y.then((token)=> console.log(token));
