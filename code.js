@@ -1,5 +1,5 @@
 
-let func = async () => {
+let token_func = async () => {
     let {token} = await fetch('https://accept.paymob.com/api/auth/tokens', {
         method: 'POST',
         headers: {
@@ -16,6 +16,13 @@ let func = async () => {
     // let token = response.token;
     console.log(token)
     document.getElementById("token").innerHTML = token;
+
+    return token;
 }
 
-func();
+let func_that_needs_the_token = async () => {
+    const token = await token_func();
+}
+
+
+func_that_needs_the_token();
