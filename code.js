@@ -114,10 +114,11 @@ let get_ifram_token = async () => {
 
    
     console.log(token)
-    return token;
+    window.location.replace("https://accept.paymob.com/api/acceptance/iframes/701151?payment_token="+token+""); 
+    //token;
 }
 
 
 
-get_ifram_token()
+//get_ifram_token()
 
