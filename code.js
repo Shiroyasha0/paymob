@@ -1,3 +1,13 @@
+randoNum = Math.floor(Math.random()*1000000)
+console.log(randoNum)
+
+
+
+
+
+
+
+
 let token_func = async () => {
     let {token} = await fetch('https://accept.paymob.com/api/auth/tokens', {
         method: 'POST',                                                                
@@ -20,7 +30,7 @@ let token_func = async () => {
 
 
 
-let func_that_needs_the_token = async () => {
+let get_id = async () => {
     const token = await token_func();
     let {id} = await fetch('https://accept.paymob.com/api/ecommerce/orders', {
         method: 'POST',                                                                
@@ -35,7 +45,7 @@ let func_that_needs_the_token = async () => {
 
         "amount_cents": "1000",
         "currency": "EGP",
-        "merchant_order_id": 777,
+        "merchant_order_id": randoNum,
         "items": [{
             "name": "ASC1515",
             "amount_cents": "1000",
@@ -53,4 +63,6 @@ let func_that_needs_the_token = async () => {
 }
 
 
-func_that_needs_the_token();
+get_id();
+
+
