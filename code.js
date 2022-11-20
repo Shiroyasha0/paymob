@@ -1,5 +1,4 @@
 randoNum = Math.floor(Math.random()*1000000);
-setTimeout(250);
 console.log(randoNum)
 
 
